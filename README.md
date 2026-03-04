@@ -1,64 +1,62 @@
-Active Directory Simulation – SolaraIA Tech
+# Active Directory Simulation – SolaraIA Tech
+###
 📌 Project Overview
-
+##
 This project demonstrates the deployment and configuration of a Windows Server Domain Controller (Active Directory) for a simulated multi-branch enterprise called SolaraIA Tech.
 
 The lab simulates centralized identity and access management across multiple locations using Windows Server 2022 and Active Directory Domain Services (AD DS).
+##
+The window implementation Includes
 
-🔧 Implementation Includes
+- Domain Controller deployment
 
-Domain Controller deployment
+- DNS configuration
 
-DNS configuration
+- Multi-location Organizational Unit (OU) design
 
-Multi-location Organizational Unit (OU) design
+- User and security group creation
 
-User and security group creation
+- Group Policy Object (GPO) enforcement
 
-Group Policy Object (GPO) enforcement
+- Enterprise security hardening
 
-Enterprise security hardening
-
-Policy validation and testing
-
-🏢 Company Structure
+- Policy validation and testing
+##
+Company Structure
+---
 Chicago (Headquarters)
 
-Finance Department
+- Finance Department
 
-IT Department
+- IT Department
 
 Indiana Location
 
-Tax Department
+- Tax Department
 
-Treasury Department
+- Treasury Department
 
 Wisconsin Location
 
-Audit Department
+- Audit Department
 
-HR Department
+- HR Department
 
-🎯 Project Objectives
+All branches are centrally managed using Active Directory to enforce security policies, manage users, and control access across the organization. 
+##
+Project Objectives
 
-Deploy Windows Server 2022 as a Domain Controller
+The objectives of this simulation were to: 
 
-Configure AD DS
+- Deploy Windows Server 2022 as a Domain Controller
+- Configure Active Directory Domain Services (AD DS)
+- Design structured OUs based on location and department
+- Implement role-based access control using security groups
+- Enforce password and account lockout policies
+- Restrict system-level tools (CMD, PowerShell, Control Panel)
+- Configure DNS for domain communication
+- Validate policy enforcement using ```gpupdate /force```
 
-Design structured OUs
-
-Implement RBAC
-
-Enforce password & lockout policies
-
-Restrict CMD, PowerShell, Control Panel
-
-Configure DNS
-
-Validate policies using:
-
-gpupdate /force
 🌐 Network Design
 ```
 🌐 Internet
@@ -86,30 +84,33 @@ gpupdate /force
 │ Indiana User   │
 └────────────────┘
 ```
-⚙️ IP Configuration
+##
+IP Configuration
+---
+- Domain Name: SolaraIA.com
 
-Domain Name: SolaraIA.com
+- Server Name: SolaraIA
 
-Server Name: SolaraIA
+- Server IP: 10.0.5.4
 
-Server IP: 10.0.5.4
+- Gateway: 10.0.5.1
 
-Gateway: 10.0.5.1
+All client machines were configured to use the Domain Controller as their primary DNS server to enable domain authentication. 
+###
+Domain Configuration
+---
+- Installed Active Directory Domain Services (AD DS)
 
-🧩 Domain Configuration
+- Promoted to Domain Controller
 
-Installed AD DS
+- Created domain: SolaraIA.com
 
-Promoted to Domain Controller
+- Configured DNS services
 
-Created domain: SolaraIA.com
-
-Configured DNS
-
-Verified login:
-
-SolaraIA\Administrator
-🗂️ OU Design
+- Verified domain login using ```SolaraIA\Administrator```
+##
+Organizational Unit (OU) Design
+---
 ```
 SolaraIA.com
 │
@@ -125,71 +126,111 @@ SolaraIA.com
     ├── Tax
     └── Treasury
 ```
-👥 Users & Groups
 
-Created department security groups
+This structure allows: 
 
-Created user accounts
+- Targeted GPO enforcement
+  
+- Department-level access control
+  
+- Administrative delegation
+  
+- Scalable enterprise design
+##
+Users & Security Groups
+---
+For each department: 
 
-Assigned users to groups
+- Security groups were created
+- Individual user accounts were created
+- Users were assigned to department-specific groups
+- Access control was applied using group membership
 
-Applied RBAC
+This follows a role-based access control (RBAC) model.
+##
+Group Policy Objects (GPO)
+---
+The following security policies were implemented: 
 
-🔐 Group Policy (GPO)
 Password Policy
+---
+- Enforced password complexity
 
-Complexity enabled
+- Minimum password length requirement
 
-Minimum length enforced
+Account Lockout Policy
+---
+- Lockout threshold: 3 failed login attempts
 
-Account Lockout
-
-3 failed attempts
+- Mitigates brute-force attacks
 
 System Restrictions
+---
+- Disabled Command Prompt
 
-Disabled CMD
+- Blocked PowerShell access
 
-Blocked PowerShell
-
-Restricted Control Panel
+- Restricted Control Panel access
 
 Deployment
+---
+- GPOs linked to appropriate Organizational Units
 
-Linked GPOs to OUs
+- Policies applied using ```gpupdate /force```
+  
+- Enforcement validated on client systems
+##
+Screenshots
+---
 
-Applied with:
+Screenshots documenting the full implementation process are available in: 
+- ```screenshots/``` folder
+- ```screenshots.md``` file
+##
+Key implementation stages captured: 
+---
+- VM grouping
 
-gpupdate /force
-📸 Screenshots
-/screenshots
-screenshots.md
-✅ Key Takeaways
+- AD DS installation
 
-Built a multi-branch AD environment
+- Domain Controller promotion
 
-Designed scalable OU structure
+- OU structure creation
 
-Implemented enterprise security policies
+- User & group creation
 
-Centralized access management
+- DNS configuration
 
-Validated GPO enforcement
+- GPO linking
 
-🛠️ Skills Demonstrated
+- Policy enforcement validation  
+##
+Key Takeaways
+---
+- Successfully deployed and configured a multi-branch Active Directory environment
 
-Active Directory
+- Implemented structured OU design based on geography and department
 
-Windows Server 2022
+- Implemented enterprise-level security hardening policies
 
-DNS
+- Demonstrated centralized identity and access management
 
-OU Design
+- Validated policy enforcement in a simulated corporate environment
+##
+Skills Demonstrated
+---
+- Active Directory Administration
 
-GPO Management
+- Windows Server 2022
 
-RBAC
+- DNS Configuration
 
-Security Hardening
+- Organization Unit Design
 
-Networking
+- Group Policy Object (GPO) Management
+
+- Role-Based Access Control (RBAC)
+
+- Enterprise Security Hardening
+
+- Networking configuration
