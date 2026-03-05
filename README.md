@@ -186,6 +186,8 @@ Screenshots
 Screenshots documenting the full implementation process are available in: 
 - ```screenshots/``` folder
 - ```screenshots.md``` file
+
+  - Screenshots/10_Cmd_Block.png
 ##
 Key implementation stages captured: 
 ---
