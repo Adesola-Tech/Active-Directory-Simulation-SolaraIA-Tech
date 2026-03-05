@@ -186,8 +186,6 @@ Screenshots
 Screenshots documenting the full implementation process are available in: 
 - ```screenshots/``` folder
 - ```screenshots.md``` file
-
-  - Screenshots
 ##
 Key implementation stages captured: 
 ---
